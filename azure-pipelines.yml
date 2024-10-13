@@ -66,6 +66,7 @@ stages:
       artifact: drop
 
 - stage: 'Deploy'
+  condition: false # and(always(), eq(variables['disableDeploy'], 'false'))
   displayName: 'Deploy the web application'
   dependsOn: Build
   jobs:
